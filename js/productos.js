@@ -18,16 +18,20 @@ async function cargarProductos() {
 
     try {
 
-         // Productos base del archivo JSON
-         const respuesta = await fetch("data/productos.json");
-         const productosBase = await respuesta.json();
+        // Productos base del archivo JSON
+        const respuesta = await fetch("data/productos.json");
+        const productosBase = await respuesta.json();
 
-         // Productos agregados desde el panel
-         const productosGuardados =
-             JSON.parse(localStorage.getItem("jeyce_productos")) || [];
+        // Productos desde Firebase
+        const snapshot = await getDocs(collection(db, "productos"));
+
+        const productosFirebase = snapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
 
         // Unir ambos catálogos
-        productos = [...productosBase, ...productosGuardados];
+        productos = [...productosBase, ...productosFirebase];
 
         // Mostrar solo los disponibles
         productos = productos.filter(p => p.disponible !== false);
