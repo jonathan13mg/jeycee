@@ -250,20 +250,32 @@ form.addEventListener("submit", async function (e) {
 
         disponible: Number(document.getElementById("stock").value) > 0
 
-    };
-
-    if (productoEditando) {
+    };if (productoEditando) {
 
         alert("La edición con Firebase la activaremos en el siguiente paso");
 
     } else {
 
-        await addDoc(collection(db, "productos"), nuevoProducto);
+        try {
 
-        alert("Producto agregado correctamente en Firebase");
-    
+            await addDoc(collection(db, "productos"), nuevoProducto);
+
+            alert("Producto agregado correctamente en Firebase");
+
+        } catch (error) {
+
+            console.error("Error al guardar en Firebase:", error);
+
+            alert("Error al guardar el producto: " + error.message);
+
+            return;
+
+        }
+
     }
 
+    cargarProductos();
+    
     // Reiniciar formulario
     productoEditando = null;
 
