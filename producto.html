@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto | JEYCE</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="header">
+
+    <div class="logo">JEYCE</div>
+
+    <div class="busqueda">
+
+        <input
+            type="text"
+            placeholder="Buscar productos..."
+        >
+
+    </div>
+
+    <nav class="menu">
+
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="contacto.html">Contacto</a>
+
+    </nav>
+
+</header>
+
+<main class="producto-detalle">
+
+    <div class="producto-imagen">
+
+        <img
+            id="imagen-producto"
+            class="imagen-principal"
+            src=""
+            alt="Producto"
+        >
+        
+        <div 
+             id="galeria-miniaturas"
+             class="galeria-miniaturas"
+        ></div>
+
+    </div>
+
+    <div class="producto-info-detalle">
+
+        <h1 id="nombre-producto"></h1>
+
+        <p id="precio-producto" class="precio-grande"></p>
+
+        <div class="ficha-producto">
+
+            <div class="fila-ficha">
+
+                <span>Categoría</span>
+
+                <strong id="categoria-producto"></strong>
+
+            </div>
+
+            <div class="fila-ficha">
+
+                <span>Marca</span>
+
+                <strong id="marca-producto"></strong>
+
+            </div>
+
+            <div class="fila-ficha">
+
+                <span>Talla</span>
+
+                <strong id="talla-producto"></strong>
+
+            </div>
+
+            <div class="fila-ficha">
+
+                <span>Estado</span>
+
+                <strong id="estado-producto"></strong>
+
+            </div>
+
+            <div class="fila-ficha">
+
+                <span>Código</span>
+
+                <strong id="codigo-producto"></strong>
+
+            </div>
+
+            <div class="fila-ficha">
+
+                <span>Origen</span>
+
+                <strong id="origen-producto"></strong>
+
+            </div>
+
+            <div class="fila-ficha">
+
+                <span>Disponibilidad</span>
+
+                <strong id="stock-producto"></strong>
+
+            </div>
+
+        </div>
+
+        <div class="descripcion">
+
+            <h3>Descripción</h3>
+
+            <p id="descripcion-producto"></p>
+
+        </div>
+
+        <a
+            id="btn-comprar"
+            class="btn-whatsapp grande"
+            href="#"
+            target="_blank"
+        >
+
+            Comprar por WhatsApp
+
+        </a>
+
+    </div>
+
+</main>
+
+<footer class="footer">
+
+    <p>© 2026 JEYCE | Santa Cruz, Bolivia</p>
+
+</footer>
+
+<!-- Visor de imagen en pantalla completa -->
+<div id="visor-imagen" class="visor-imagen">
+
+    <button id="cerrar-visor" class="cerrar-visor">×</button>
+
+    <button id="visor-anterior" class="visor-nav visor-prev">‹</button>
+
+    <img id="imagen-visor" src="" alt="Vista ampliada">
+
+    <button id="visor-siguiente" class="visor-nav visor-next">›</button>
+
+</div>
+
+<script src="js/producto.js"></script>
+
+</body>
+</html>

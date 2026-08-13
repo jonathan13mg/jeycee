@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | JEYCE</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="header">
+
+    <div class="logo">JEYCE</div>
+
+    <div class="busqueda">
+
+        <input
+            type="text"
+            id="buscador"
+            placeholder="Buscar productos, categorías o marcas..."
+        >
+
+    </div>
+
+    <nav class="menu">
+
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="contacto.html">Contacto</a>
+
+    </nav>
+
+</header>
+
+<main class="catalogo-layout">
+
+    <aside class="sidebar">
+
+        <h3>Categorías</h3>
+
+        <div id="lista-categorias"></div>
+
+    </aside>
+
+    <section class="contenido-catalogo">
+
+        <div class="catalogo-header">
+
+            <h1>Todos los productos</h1>
+
+            <p id="contador-productos"></p>
+
+        </div>
+
+        <div id="lista-productos" class="grid-productos"></div>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+
+    <p>© 2026 JEYCE | Santa Cruz, Bolivia</p>
+
+</footer>
+
+<script src="js/utilidades.js"></script>
+<script src="js/productos.js"></script>
+
+</body>
+</html>

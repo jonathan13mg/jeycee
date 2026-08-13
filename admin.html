@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración | JEYCE</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="header">
+
+    <div class="logo">JEYCE Admin</div>
+
+    <nav class="menu">
+
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="admin.html">Administración</a>
+
+    </nav>
+
+</header>
+
+<main class="admin-layout">
+
+    <section class="contenido-catalogo">
+
+        <div class="catalogo-header">
+
+            <h1>Administrador de productos</h1>
+
+            <p>Agrega nuevos productos al catálogo de JEYCE</p>
+
+        </div>
+
+        <!-- Formulario para agregar productos -->
+        <form id="form-producto" class="form-admin">
+
+            <div class="campo">
+
+                <label>Nombre del producto</label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    required
+                >
+
+            </div>
+
+            <div class="campo">
+
+                <label>Precio (Bs)</label>
+
+                <input
+                    type="number"
+                    id="precio"
+                    required
+                >
+
+            </div>
+
+            <div class="campo">
+
+                <label>Stock disponible</label>
+
+                <input
+                    type="number"
+                    id="stock"
+                    min="0"
+                    value="1"
+                    required
+                >
+
+            </div>
+
+            <div class="campo">
+
+                <label>Categoría</label>
+
+                <select id="categoria" required></select>
+
+            </div>
+
+            <div class="campo">
+
+                <label>Subcategoría</label>
+
+                <select id="subcategoria" required></select>
+
+            </div>
+
+            <div class="campo">
+
+                <label>Marca</label>
+
+                <input
+                    type="text"
+                    id="marca"
+                    placeholder="Ej: Zara, Nike, H&M"
+                >
+
+            </div>
+
+            <div class="campo">
+
+                <label>Talla</label>
+
+                <input
+                    type="text"
+                    id="talla"
+                    placeholder="Ej: XS, S, M, L, XL, 38, 40, Única"
+                >
+
+            </div>
+
+            <div class="campo">
+
+                <label>Estado del producto</label>
+
+                <select id="estado">
+
+                    <option value="">Seleccionar</option>
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="Como nuevo">Como nuevo</option>
+                    <option value="Buen estado">Buen estado</option>
+                    <option value="Detalle estético">Detalle estético</option>
+
+                </select>
+
+            </div>
+
+            <div class="campo">
+
+                <label>Código interno</label>
+
+                <input
+                    type="text"
+                    id="codigo"
+                    placeholder="Ej: RPA-0241"
+
+                >
+
+            </div>
+
+            <div class="campo">
+
+                <label>Fotos del producto (hasta 5 imágenes)</label>
+
+                <input
+                    type="file"
+                    id="imagenes"
+                    accept="image/*"
+                    multiple
+                >
+                
+                <div
+                    id="preview-imagenes"
+                    class="preview-grid-admin"
+                ></div>
+
+            </div>
+
+            <button type="submit" class="btn-principal">
+                Agregar producto
+            </button>
+
+        </form>
+
+        <!-- Inventario -->
+        <hr style="margin:40px 0;">
+
+        <h2>Inventario actual</h2>
+
+        <div id="lista-admin"></div>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+
+    <p>Panel de Administración JEYCE</p>
+
+</footer>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>
