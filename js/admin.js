@@ -1,3 +1,13 @@
+import {
+    db,
+    collection,
+    addDoc,
+    getDocs,
+    doc,
+    updateDoc,
+    deleteDoc
+} from "./firebase.js";
+
 const form = document.getElementById("form-producto");
 const listaAdmin = document.getElementById("lista-admin");
 
