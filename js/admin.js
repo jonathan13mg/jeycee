@@ -217,7 +217,7 @@ function mostrarInventario(base, guardados) {
 // =====================
 // AGREGAR / EDITAR
 // =====================
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", async function (e) {
 
     e.preventDefault();
 
@@ -254,27 +254,15 @@ form.addEventListener("submit", function (e) {
 
     if (productoEditando) {
 
-        const index =
-            guardados.findIndex(p => p.id === productoEditando);
-
-        if (index !== -1) {
-            guardados[index] = nuevoProducto;
-        }
-
-        alert("Producto actualizado correctamente");
+        alert("La edición con Firebase la activaremos en el siguiente paso");
 
     } else {
 
-        guardados.push(nuevoProducto);
+        await addDoc(collection(db, "productos"), nuevoProducto);
 
-        alert("Producto agregado correctamente");
-
+        alert("Producto agregado correctamente en Firebase");
+    
     }
-
-    localStorage.setItem(
-        "jeyce_productos",
-        JSON.stringify(guardados)
-    );
 
     // Reiniciar formulario
     productoEditando = null;
