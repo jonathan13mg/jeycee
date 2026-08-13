@@ -1,3 +1,9 @@
+import {
+    db,
+    collection,
+    getDocs
+} from "./firebase.js";
+
 let productos = [];
 
 const listaProductos = document.getElementById("lista-productos");
